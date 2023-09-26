@@ -1,4 +1,4 @@
-create database QLVPP 
+﻿create database QLVPP 
 
 use QLVPP
 
@@ -86,3 +86,34 @@ create table HOADON_MATHANG(
 	foreign key (MAHD) references HOA_DON(MAHOADON),
 	foreign key (MAMH) references MAT_HANG(MAMH)
 )
+
+set dateformat dmy
+
+
+insert into NHAN_VIEN values('AD00', N'Phạm Hoàng Nhân', N'Bình Dương', '0387860889','Nam' ,'17/09/2003','123456789','admin','admin123','False' , 'True');
+insert into NHAN_VIEN values('NV01', N'Nguyên Văn Nguyên', N'Quảng Trị', '0387851489','Nam' ,'20/04/2003','123356789','nguyennv','nguyennv','False' , 'False');
+insert into NHAN_VIEN values('NV02', N'Trần Hữu Tiến', N'Quảng Bình', '0987851489','Nam' ,'10/01/2001','123354719','tienth','tienth','False' , 'False');
+insert into NHAN_VIEN values('NV03', N'Phùng Văn Duy', N'TP HCM', '0987851389','Nam' ,'20/03/2003','223356789','duypv','duypv','False' , 'True');
+insert into NHAN_VIEN values('NV04', N'Nguyễn Minh Quân', N'Hà Tĩnh', '0357851489','Nam' ,'10/04/2003','123356789','quannm','quannm','False' , 'True');
+insert into NHAN_VIEN values('NV05', N'Nguyễn Anh Quân', N'Long Thành', '0287851489','Nam' ,'15/11/2003','126156789','quannm1','quannm1','False' , 'False');
+
+insert into LOAI_MAT_HANG values('BANG',N'BẢNG',0)
+insert into LOAI_MAT_HANG values('BIA',N'BIA',0)
+insert into LOAI_MAT_HANG values('BUT',N'BÚT',1)
+insert into LOAI_MAT_HANG values('CAP',N'CẶP',0)
+insert into LOAI_MAT_HANG values('GIAY',N'GIẤY',1)
+insert into LOAI_MAT_HANG values('KEO',N'BĂNG KEO',0)
+insert into LOAI_MAT_HANG values('MT',N'MÁY TÍNH',0)
+insert into LOAI_MAT_HANG values('PHAN',N'PHẤN',0)
+insert into LOAI_MAT_HANG values('THUOC',N'THƯỚC',0)
+
+insert into MAT_HANG values ('BA001',N'BẢNG TRẺ EM',12000,N'CÁI','BANG',N'2 mặt, một mặt dùng bút lông bảng, một mặt dùng phấn',0)
+insert into MAT_HANG values ('BA002',N'BẢNG MICA',7000,N'CÁI','BANG',N'Mặt bảng bằng MICA bền đẹp',0)
+insert into MAT_HANG values ('BA003',N'BẢNG HỌC SINH',30000,N'CHIẾC','BANG',N'Bảng độ bền cao',0)
+insert into MAT_HANG values ('BA004',N'BẢNG KẺ Ô LI TIỂU HỌC',740000,N'CÁI','BANG',N'Bảng độ bền cao, có thể điều chỉnh lên xuống',0)
+
+
+select * from MAT_HANG
+select * from LOAI_MAT_HANG
+select * from NHAN_VIEN
+
