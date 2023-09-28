@@ -89,10 +89,6 @@ public class LoginForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -111,13 +107,17 @@ public class LoginForm extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lbforget)))
                 .addGap(181, 181, 181))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addGap(45, 45, 45)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -131,7 +131,7 @@ public class LoginForm extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(23, 23, 23)
                 .addComponent(lbforget)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,7 +145,9 @@ public class LoginForm extends javax.swing.JFrame {
             String q = "Select * from NHAN_VIEN where TENDANGNHAP = '" + username + "' and MATKHAU = '" + password + "'";
             ResultSet rs = db.ExQuery(q);
             if (rs.next()) {
-                JOptionPane.showMessageDialog(this, "Login Success");
+                MainForm mf = new MainForm(this,txtusername.getText());
+                mf.setVisible(true);
+                this.hide();
             } else {
                 JOptionPane.showMessageDialog(this, "Sai tên tài khoản hoặc mật khẩu");
             }

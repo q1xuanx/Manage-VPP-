@@ -117,3 +117,6 @@ select * from MAT_HANG
 select * from LOAI_MAT_HANG
 select * from NHAN_VIEN
 
+
+
+select TENDANGNHAP,TENHANVIEN, SDT, GIOITINH, NGAYSINH from NHAN_VIEN where LAQUANLY = 0
