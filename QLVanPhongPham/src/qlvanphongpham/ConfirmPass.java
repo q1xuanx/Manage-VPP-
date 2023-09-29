@@ -124,6 +124,7 @@ public class ConfirmPass extends javax.swing.JFrame {
                         bindTableQL();
                         bindTableNV();
                         JOptionPane.showMessageDialog(this, "Phân quyền thành công");
+                        this.dispose();
                     }else {
                         JOptionPane.showMessageDialog(this, "Có lỗi xảy ra trong quá trình phân quyền");
                     }
@@ -134,6 +135,7 @@ public class ConfirmPass extends javax.swing.JFrame {
                         bindTableQL();
                         bindTableNV();
                         JOptionPane.showMessageDialog(this, "Phân quyền hoàn tất");
+                        this.dispose();
                     }else {
                         JOptionPane.showMessageDialog(this, "Có lỗi xảy ra trong quá trình phân quyền");
                     }
