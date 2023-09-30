@@ -43,14 +43,27 @@ public class LoginForm extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         lbforget = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Đăng nhập");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 600, 260));
 
-        jLabel2.setText("Tài khoản");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-user-48 (1).png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, 40));
 
-        jLabel3.setText("Mật khẩu");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_password_48px.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
+
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 190, 40));
+        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 190, 40));
 
         jButton1.setText("Đăng nhập");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +71,7 @@ public class LoginForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 100, 40));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-eye-20.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,8 +79,10 @@ public class LoginForm extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 50, 40));
 
-        lbforget.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbforget.setBackground(new java.awt.Color(255, 255, 255));
+        lbforget.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         lbforget.setText("Quên mật khẩu?");
         lbforget.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -78,55 +94,10 @@ public class LoginForm extends javax.swing.JFrame {
                 lbforgetMouseClicked(evt);
             }
         });
+        getContentPane().add(lbforget, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 160, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(lbforget))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtusername)
-                            .addComponent(txtpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jButton1)))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(1, 1, 1)
-                .addComponent(lbforget)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LoginBackground.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 600, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,10 +138,10 @@ public class LoginForm extends javax.swing.JFrame {
     private void lbforgetMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbforgetMouseMoved
         // TODO add your handling code here:
         if (!checkColor) {
-            lbforget.setForeground(Color.blue);
+            lbforget.setForeground(Color.white);
             checkColor = true;
         } else {
-            lbforget.setForeground(Color.black);
+            lbforget.setForeground(Color.blue);
             checkColor = false;
         }
     }//GEN-LAST:event_lbforgetMouseMoved
@@ -180,6 +151,10 @@ public class LoginForm extends javax.swing.JFrame {
         QuenMatKhauForm qmk = new QuenMatKhauForm();
         qmk.setVisible(true);
     }//GEN-LAST:event_lbforgetMouseClicked
+
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +197,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lbforget;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JTextField txtusername;
