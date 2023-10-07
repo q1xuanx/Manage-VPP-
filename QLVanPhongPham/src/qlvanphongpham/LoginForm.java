@@ -111,8 +111,9 @@ public class LoginForm extends javax.swing.JFrame {
             String q = "Select * from NHAN_VIEN where TENDANGNHAP = '" + username + "' and MATKHAU = '" + password + "'";
             ResultSet rs = db.ExQuery(q);
             if (rs.next()) {
-                MainForm mf = new MainForm(this, txtusername.getText());
-                mf.setVisible(true);
+                
+                MainForm m = new MainForm(this, txtusername.getText());
+                m.setVisible(true);
                 this.hide();
             } else {
                 JOptionPane.showMessageDialog(this, "Sai tên tài khoản hoặc mật khẩu");
@@ -121,6 +122,7 @@ public class LoginForm extends javax.swing.JFrame {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     private boolean checkButton = false;
